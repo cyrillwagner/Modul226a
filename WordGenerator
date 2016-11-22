@@ -1,0 +1,56 @@
+package ch.csbe.hangman;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.function.Supplier;
+
+public class WordGenerator implements Supplier<String> {
+    
+    private final String allWords = "ab etwas Holz neun	stellen"
++ "Abend fahren	hören nicht	Straße acht	Fahrrad	Hund nichts	Stück"
++ "alle fährt Hunger nie Stunde allein fallen ich nimmt suchen"
++ "als Familie ihm noch Tag also fangen ihn nun Tante alt fast"
++ "ihr nur Teller an fehlen im ob tief andere Fehler immer oben Tier"
++ "anfangen Feld in oder Tisch Angst Fenster ins offen tot antworten"
++ "Ferien ist öffnen tragen Apfel fertig ja oft traurig Arbeit fest"
++ "Jahr ohne treffen arbeiten Feuer jeder Oma trinken Arzt fiel jetzt"
++ "Onkel tun auch finden jung Opa Tür auf fing Junge packen turnen"
++ "Auge Finger kalt Pferd über aus Fisch kam Platz überall Auto Flasche"
++ "kann plötzlich Uhr baden fliegen Katze Polizei um bald Frage kaufen"
++ "Rad uns Ball fragen kein rechnen unser bauen Frau kennen reden unten"
++ "Bauer frei Kind reich unter Baum fressen Klasse reiten Vater beginnen"
++ "Freude klein rennen vergessen bei freuen klettern richtig verkaufen"
++ "beide Freund kochen rot verlieren Bein fröhlich kommen rufen verstecken"
++ "Beispiel früh können ruhig verstehen beißen fuhr Kopf rund versuchen"
++ "bekommen führen krank Sache viel Berg fünf kurz sagen vielleicht"
++ "besser für lachen sah vier Bett Fuß Land sammeln Vogel Bild Fußball"
++ "lang schaffen voll bin gab langsam schauen vom bis ganz las scheinen von" 
++ "blau gar lassen schenken vor bleiben Garten laufen schicken vorbei"
++ "Blume geben laut Schiff Wagen Boden Geburtstag leben schlafen wahr"
++ "böse gefährlich legen schlagen Wald brauchen gegen Lehrer schlecht war"
++ "braun gehen Lehrerin schließen warm Brief gehören leicht schlimm warten"
++ "bringen gelb leise Schluss warum Brot Geld lernen Schnee was Bruder genau"
++ "lesen schnell waschen Buch gerade letzte schon Wasser da gern Leute schön";
+    
+    private final List<String> words ;
+    
+    private Iterator<String> iterator ;
+    
+    public WordGenerator() {
+        words = Arrays.asList(allWords.split(" ")) ;
+        Collections.shuffle(words);
+        iterator = words.iterator() ;
+    }
+        
+    public String get() {
+        if (! iterator.hasNext()) {
+           Collections.shuffle(words);
+           iterator = words.iterator() ;
+        }
+        return iterator.next().toUpperCase() ;
+    }
+    
+    
+}
