@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="" minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="598.0" style="-fx-background-color: #cc9966;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.csbe.hangman.MenuController">
+  <children>
+    <Button fx:id="spielstart" layoutX="249.0" layoutY="155.0" mnemonicParsing="false" onAction="#start" prefHeight="35.0" prefWidth="100.0" style="-fx-border-color: white; -fx-background-color: #392613; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Spiel starten" textFill="WHITE" />
+    <Button layoutX="249.0" layoutY="225.0" mnemonicParsing="false" onAction="#help" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #392613; -fx-border-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Hilfe" textFill="WHITE" />
+    <Button layoutX="249.0" layoutY="291.0" mnemonicParsing="false" onAction="#close" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #392613; -fx-border-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Spiel beenden" textFill="WHITE" />
+    <Label layoutX="127.0" layoutY="52.0" text="Hangman The Game" textFill="#392613">
+      <font>
+        <Font size="38.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>
